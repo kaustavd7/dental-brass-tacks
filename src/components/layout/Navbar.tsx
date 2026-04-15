@@ -85,7 +85,7 @@ export default function Navbar() {
                     <ChevronDown className={cn("w-3.5 h-3.5 transition-transform", servicesOpen && "rotate-180")} />
                   </button>
                   {servicesOpen && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-60 bg-white rounded-2xl shadow-xl shadow-sky-100/60 border border-sky-50 py-2 z-50">
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 pt-2 w-60 bg-white rounded-2xl shadow-xl shadow-sky-100/60 border border-sky-50 z-50">
                       {link.children.map((child) => (
                         <Link
                           key={child.href}

@@ -4,6 +4,7 @@ import ServicesSection from "@/components/home/ServicesSection";
 import WhyUs from "@/components/home/WhyUs";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import VideoTestimonials from "@/components/home/VideoTestimonials";
+import ReviewsSection from "@/components/home/ReviewsSection";
 import CTASection from "@/components/home/CTASection";
 
 export default function HomePage() {
@@ -15,6 +16,7 @@ export default function HomePage() {
       <WhyUs />
       <TestimonialsSection />
       <VideoTestimonials />
+      <ReviewsSection />
       <CTASection />
     </>
   );

@@ -80,7 +80,7 @@ export default function Hero() {
 
             <motion.p
               custom={2} variants={itemVariants} initial="hidden" animate="visible"
-              className="font-serif text-xl text-sky-300 italic mb-6 tracking-wide"
+              className="font-serif text-xl text-white italic mb-6 tracking-wide font-light"
             >
               — creating p<span className="not-italic font-bold">H</span>abulous Smiles
             </motion.p>
@@ -198,24 +198,13 @@ export default function Hero() {
 
               {/* Floating badge — top right */}
               <motion.div
-                initial={{ opacity: 0, x: 20, y: -10 }}
+                initial={{ opacity: 0, x: 20, y: 10 }}
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 transition={{ delay: 0.9, duration: 0.5 }}
-                className="absolute -top-4 -right-4 glass rounded-2xl px-4 py-2.5 shadow-xl"
+                className="absolute top-6 right-6 glass rounded-2xl px-4 py-2.5 shadow-xl"
               >
                 <p className="text-[10px] text-slate-300 uppercase tracking-wider">Since</p>
                 <p className="text-white font-bold font-serif text-lg leading-none">2016</p>
-              </motion.div>
-
-              {/* Floating badge — bottom left */}
-              <motion.div
-                initial={{ opacity: 0, x: -20, y: 10 }}
-                animate={{ opacity: 1, x: 0, y: 0 }}
-                transition={{ delay: 1.0, duration: 0.5 }}
-                className="absolute -bottom-4 -left-4 glass rounded-2xl px-4 py-2.5 shadow-xl"
-              >
-                <p className="text-[10px] text-sky-300 uppercase tracking-wider">Vipul World</p>
-                <p className="text-white font-semibold text-xs">Sector 48, Gurgaon</p>
               </motion.div>
             </motion.div>
           </div>
