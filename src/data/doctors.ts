@@ -25,7 +25,7 @@ export const doctors: Doctor[] = [
     fee: "₹1,200 per consultation",
     rating: "97%",
     patients: "314+",
-    image: "/images/doctors/dr-nisha-bali.jpg",
+    image: "/images/doctors/dr-nisha-bali.webp",
     description:
       "Dr. Nisha Bali is the founder and director of Dental Brass-Tacks. A gold medalist alumna of Yenepoya Dental College, Mangalore (affiliated to Rajiv Gandhi University of Health Sciences, Bangalore, 2004), she has over 21 years of comprehensive clinical experience spanning general, restorative, implant, and aesthetic dentistry.",
     highlights: [
@@ -50,7 +50,7 @@ export const doctors: Doctor[] = [
     fee: "₹1,000 per consultation",
     rating: "99%",
     patients: "134+",
-    image: "/images/doctors/dr-aneesh-katyal.jpg",
+    image: "/images/doctors/dr-aneesh-katyal.webp",
     description:
       "Dr. Aneesh Katyal is a Gold Medalist Orthodontist and the Top 1% Diamond Invisalign Provider in India. First-rank holder at University level in post-graduation, he is one of only 7 orthodontists in India conferred the distinction of Global Faculty for Align Technology.",
     highlights: [
@@ -72,7 +72,7 @@ export const doctors: Doctor[] = [
     experience: 18,
     roles: ["Pediatric Dentist"],
     fee: "Free Consultation",
-    image: "/images/doctors/dr-gauri-kalra-yadav.jpg",
+    image: "/images/doctors/dr-gauri-kalra-yadav.webp",
     description:
       "Dr. Gauri Kalra Yadav is a dedicated Pediatric Dental Specialist with 18 years of experience making dental visits fun and fear-free for children of all ages. Her postgraduate specialisation in Paedodontics and Preventive Dentistry ensures your child's smile is protected from the very first tooth.",
     highlights: [
@@ -92,7 +92,7 @@ export const doctors: Doctor[] = [
     experience: 15,
     roles: ["Dental Surgeon", "Oral & Maxillofacial Surgeon"],
     fee: "Free Consultation",
-    image: "/images/doctors/dr-shiva-sharma.jpg",
+    image: "/images/doctors/dr-shiva-sharma.webp",
     description:
       "Dr. Shiva Sharma is a skilled Dental Surgeon and Oral & Maxillofacial Surgeon with over 15 years of practice. She has worked with some of India's most prestigious hospitals and brings rigorous surgical precision to every procedure.",
     highlights: [
