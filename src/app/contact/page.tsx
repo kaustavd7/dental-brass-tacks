@@ -230,21 +230,17 @@ export default function ContactPage() {
             </AnimatedSection>
           </div>
 
-          {/* Google Map placeholder */}
-          <AnimatedSection delay={0.2} className="mt-10 rounded-2xl overflow-hidden border border-slate-100 shadow-sm h-80 bg-slate-100 flex items-center justify-center">
-            <div className="text-center text-slate-500">
-              <MapPin className="w-10 h-10 mx-auto mb-3 text-sky-400" />
-              <p className="font-semibold text-slate-700">Dental Brass-Tacks</p>
-              <p className="text-sm mt-1">A-136, Vipul World, Sohna Road, Sector 48, Gurgaon</p>
-              <a
-                href="https://maps.google.com/?q=A+136+Vipul+World+Sohna+Road+Sector+48+Gurgaon"
-                target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 mt-4 text-sky-600 font-medium hover:text-sky-700 text-sm transition-colors"
-              >
-                Open in Google Maps <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-              <p className="text-slate-400 text-xs mt-3">Replace this block with a Google Maps embed iframe in contact/page.tsx</p>
-            </div>
+          {/* Google Map */}
+          <AnimatedSection delay={0.2} className="mt-10 rounded-2xl overflow-hidden border border-slate-100 shadow-sm h-80">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.0659173598165!2d77.03217457517195!3d28.417267793824053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d2290500e832b%3A0x69f908371c54073c!2sDental%20Brasstacks%20%E2%80%93creating%20pHabulous%20Smiles.!5e0!3m2!1sen!2sin!4v1776247096996!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </AnimatedSection>
         </div>
       </div>
