@@ -3,6 +3,7 @@ import DoctorsSection from "@/components/home/DoctorsSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import WhyUs from "@/components/home/WhyUs";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
+import VideoTestimonials from "@/components/home/VideoTestimonials";
 import CTASection from "@/components/home/CTASection";
 
 export default function HomePage() {
@@ -13,6 +14,7 @@ export default function HomePage() {
       <ServicesSection />
       <WhyUs />
       <TestimonialsSection />
+      <VideoTestimonials />
       <CTASection />
     </>
   );

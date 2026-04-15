@@ -27,8 +27,8 @@ export default async function ServiceDetailPage({ params }: Props) {
   const service = services.find((s) => s.slug === slug);
   if (!service) notFound();
 
-  const WHATSAPP_NUMBER = "91XXXXXXXXXX";
-  const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hi! I'd like to know more about ${service.title} at Dental Brass Tacks.`)}`;
+  const WHATSAPP_NUMBER = "919871256897";
+  const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hello! I'd like to know more about ${service.title} at Dental Brass-Tacks.`)}`;
 
   return (
     <>
@@ -45,7 +45,6 @@ export default async function ServiceDetailPage({ params }: Props) {
           </nav>
 
           <div className="max-w-3xl">
-            <div className="text-6xl mb-6">{service.icon}</div>
             <h1 className="font-serif text-5xl sm:text-6xl font-bold mb-6">
               {service.title}
             </h1>
@@ -168,9 +167,9 @@ export default async function ServiceDetailPage({ params }: Props) {
                     <Link
                       key={s.slug}
                       href={`/services/${s.slug}`}
-                      className="flex items-center gap-2 text-gray-600 hover:text-teal-600 text-sm py-1.5 transition-colors"
+                      className="flex items-center gap-2 text-slate-600 hover:text-sky-600 text-sm py-1.5 transition-colors"
                     >
-                      <span>{s.icon}</span>
+                      <span className="w-1.5 h-1.5 bg-sky-400 rounded-full flex-shrink-0" />
                       {s.title}
                     </Link>
                   ))}

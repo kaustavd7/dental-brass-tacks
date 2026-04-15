@@ -1,80 +1,100 @@
+import Image from "next/image";
 import Link from "next/link";
 import { doctors } from "@/data/doctors";
-import { UserCircle } from "lucide-react";
+import { BadgeCheck, Star } from "lucide-react";
+import { StaggerContainer, StaggerItem, AnimatedSection } from "@/components/ui/AnimatedSection";
 
 export default function DoctorsSection() {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block bg-teal-50 text-teal-700 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">
+
+        <AnimatedSection className="text-center mb-16">
+          <span className="inline-block bg-sky-50 text-sky-700 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4 border border-sky-100">
             Meet Our Experts
           </span>
-          <h2 className="font-serif text-4xl sm:text-5xl font-bold text-gray-900 mb-5">
-            Doctors Who <span className="text-teal-600">Care</span>
+          <h2 className="font-serif text-4xl sm:text-5xl font-bold text-slate-900 mb-5">
+            Doctors Who <span className="text-sky-600">Care</span>
           </h2>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            Our team of four specialist dentists brings over 70 years of combined clinical
-            experience — each a leader in their field.
+          <p className="text-slate-500 text-lg max-w-2xl mx-auto">
+            Four specialist doctors. Over 70 years of combined clinical excellence.
+            Each a leader in their respective field.
           </p>
-        </div>
+        </AnimatedSection>
 
-        {/* Doctor cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {doctors.map((doc) => (
-            <div
-              key={doc.id}
-              className="group bg-white border border-gray-100 rounded-2xl p-6 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300"
-            >
-              {/* Avatar placeholder */}
-              <div className="w-24 h-24 bg-teal-50 rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:bg-teal-100 transition-colors">
-                <UserCircle className="w-14 h-14 text-teal-400" strokeWidth={1.5} />
+            <StaggerItem key={doc.id}>
+              <div className="group bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-sky-100/60 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+
+                {/* Photo */}
+                <div className="relative h-52 bg-gradient-to-br from-sky-50 to-slate-100 overflow-hidden">
+                  <Image
+                    src={doc.image}
+                    alt={doc.name}
+                    fill
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent" />
+
+                  {/* Roles */}
+                  <div className="absolute bottom-3 left-3 flex flex-wrap gap-1">
+                    {doc.roles.slice(0, 2).map((role) => (
+                      <span key={role} className="bg-white/90 backdrop-blur-sm text-sky-700 text-[10px] font-semibold px-2 py-0.5 rounded-full">
+                        {role}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Info */}
+                <div className="p-5 flex flex-col flex-1">
+                  <div className="flex items-start justify-between gap-2 mb-1">
+                    <h3 className="font-serif text-lg font-bold text-slate-900 leading-snug">
+                      {doc.name}
+                    </h3>
+                    <BadgeCheck className="w-4 h-4 text-sky-500 flex-shrink-0 mt-0.5" />
+                  </div>
+
+                  <p className="text-sky-600 text-xs font-medium leading-snug mb-2">
+                    {doc.qualifications}
+                  </p>
+
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-slate-400 text-xs">{doc.experience} yrs experience</span>
+                    {doc.rating && (
+                      <span className="flex items-center gap-1 text-amber-500 text-xs font-medium">
+                        <Star className="w-3 h-3 fill-amber-400" />
+                        {doc.rating}
+                      </span>
+                    )}
+                  </div>
+
+                  <p className="text-slate-500 text-xs leading-relaxed flex-1 line-clamp-3 mb-4">
+                    {doc.description}
+                  </p>
+
+                  <div className="mt-auto">
+                    <span className="inline-block bg-sky-50 text-sky-700 text-xs font-semibold px-3 py-1.5 rounded-lg border border-sky-100">
+                      {doc.fee}
+                    </span>
+                  </div>
+                </div>
               </div>
-
-              {/* Specialisation badge */}
-              <div className="flex flex-wrap justify-center gap-1 mb-3">
-                {doc.roles.map((role) => (
-                  <span
-                    key={role}
-                    className="bg-teal-50 text-teal-700 text-[10px] font-semibold uppercase tracking-wide px-2.5 py-1 rounded-full"
-                  >
-                    {role}
-                  </span>
-                ))}
-              </div>
-
-              {/* Name */}
-              <h3 className="font-serif text-lg font-bold text-gray-900 text-center mb-1">
-                {doc.name}
-              </h3>
-
-              {/* Qualifications */}
-              <p className="text-teal-600 text-xs text-center font-medium mb-2 leading-snug">
-                {doc.qualifications}
-              </p>
-
-              {/* Experience */}
-              <p className="text-gray-400 text-xs text-center mb-4">
-                {doc.experience} years experience
-              </p>
-
-              {/* Description */}
-              <p className="text-gray-500 text-sm text-center leading-relaxed line-clamp-3">
-                {doc.description}
-              </p>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
-        <div className="text-center mt-12">
+        <AnimatedSection delay={0.2} className="text-center mt-12">
           <Link
             href="/about"
-            className="inline-block border-2 border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white px-8 py-3.5 rounded-xl font-semibold transition-all"
+            className="inline-block border-2 border-sky-600 text-sky-600 hover:bg-sky-600 hover:text-white px-8 py-3.5 rounded-xl font-semibold transition-all"
           >
-            Learn More About Our Team
+            Meet the Full Team
           </Link>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );
